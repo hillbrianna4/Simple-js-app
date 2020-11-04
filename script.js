@@ -11,8 +11,8 @@ pokemonList.forEach(function(pokemonList){
   document.write(pokemonList.name + ' is ' + pokemonList.height + ' m tall' + "<br>")
 });
 
-!function(getAll){
-  return pokemonList.getAll();
+!function getAll(){
+  return pokemonList.getAll
 
   !function add(pokemon) {
     pokemonList.push(pokemon);
