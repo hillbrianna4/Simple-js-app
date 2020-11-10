@@ -16,6 +16,7 @@ let pokemonRepository = (function () {
       types: ["grass"],
     },
   ];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   function add(pokemon) {
     if (
@@ -32,7 +33,8 @@ let pokemonRepository = (function () {
   function getAll() {
     return repository;
   }
-  function addListItem(pokemon){
+
+ function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
     let button = document.createElement("button");
@@ -40,15 +42,24 @@ let pokemonRepository = (function () {
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
+button.addEventListener("click", function(event) {
+      showDetails(pokemon);
+    });
   }
+
+
+
+
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    
+
   };
 })();
 
-pokemonRepository.add({ name: "Piplup", height: 0.4, types: ["electric"] });
+pokemonRepository.add({ name: "Piplup", height: 0.4, types: ["water"] });
 
 console.log(pokemonRepository.getAll());
 
