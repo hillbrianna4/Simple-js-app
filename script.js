@@ -33,6 +33,9 @@ let pokemonRepository = (function () {
   function getAll() {
     return repository;
   }
+  function showDetails(pokemon){
+   let pokemonList = document.querySelector('.pokemon-list');
+  }
 
  function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
@@ -50,11 +53,12 @@ button.addEventListener("click", function(event) {
 
 
 
+
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
-    
+    showDetails:showDetails,
 
   };
 })();
